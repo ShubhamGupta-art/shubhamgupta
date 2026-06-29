@@ -687,6 +687,93 @@
       font-size: 13px;
     }
 
+    /* SECTION: SKILLS */
+    #skills {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .skill-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: transform var(--transition-speed) ease, border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+      cursor: default;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-purple);
+      box-shadow: 0 10px 25px rgba(139, 111, 232, 0.15);
+    }
+
+    .skill-icon-wrapper {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(139, 111, 232, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-mist);
+      flex-shrink: 0;
+      transition: background var(--transition-speed) ease, color var(--transition-speed) ease;
+    }
+
+    .skill-card:hover .skill-icon-wrapper {
+      background: var(--accent-purple);
+      color: #FFF;
+    }
+
+    .skill-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .skill-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .skill-desc {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Responsive adjustments for skills grid */
+    @media (max-width: 1100px) {
+      .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* SECTION 3 — PROJECTS */
     #projects {
       max-width: 1200px;
@@ -1376,6 +1463,7 @@
       <nav class="nav-links" id="nav-menu">
         <a href="#intro" class="active">Intro</a>
         <a href="#research">Research</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -1574,6 +1662,175 @@
 
       </div>
 
+    </div>
+  </section>
+
+  <!-- SECTION: SKILLS & TECH STACK -->
+  <section id="skills" class="reveal">
+    <div class="section-panel">
+      <div class="research-header">
+        <span class="eyebrow">// SKILLS & TECH STACK</span>
+        <h2>Core Technologies & Frameworks</h2>
+        <p class="research-intro">
+          Core tools, platforms, and ML libraries that form the backbone of my CV research and full-stack software developments.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Python -->
+        <div class="skill-card">
+          <div class="skill-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M12 2C6.5 2 6 3.5 6 5.5v2h6v2H6c-2 0-3.5.5-3.5 6s1.5 5.5 3.5 5.5h2v-2c0-2 1.5-3.5 3.5-3.5h6c2 0 3.5-1.5 3.5-3.5v-6c0-2-1.5-3.5-3.5-3.5H12z"/><path d="M12 22c5.5 0 6-1.5 6-3.5v-2h-6v-2h6c2 0 3.5-.5 3.5-5.5s-1.5-5.5-3.5-5.5h-2v2c0 2-1.5 3.5-3.5 3.5h-6C4.5 13 3 14.5 3 16.5v6C3 24.5 4.5 22 6.5 22H12z"/></svg>
+          </div>
+          <div class="skill-info">
+            <span class="skill-name">Python</span>
+            <span class="skill-desc">Language</span>
+          </div>
+        </div>
+
+        <!-- PyTorch -->
+        <div class="skill-card">
+          <div class="skill-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M12 2L3 9v8c0 2.2 1.8 4 4 4h10c2.2 0 4-1.8 4-4V9L12 2z"/><path d="M12 22V12"/></svg>
+          </div>
+          <div class="skill-info">
+            <span class="skill-name">PyTorch</span>
+            <span class="skill-desc">Deep Learning</span>
+          </div>
+        </div>
+
+        <!-- Scikit-learn -->
+        <div class="skill-card">
+          <div class="skill-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><circle cx="12" cy="12" r="3"/><path d="M12 2v7"/><path d="M12 15v7"/><path d="M2 12h7"/><path d="M15 12h7"/></svg>
+          </div>
+          <div class="skill-info">
+            <span class="skill-name">Scikit-learn</span>
+            <span class="skill-desc">Machine Learning</span>
+          </div>
+        </div>
+
+        <!-- FastAPI -->
+        <div class="skill-card">
+          <div class="skill-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="skill-info">
+            <span class="skill-name">FastAPI</span>
+            <span class="skill-desc">API Framework</span>
+          </div>
+        </div>
+
+        <!-- React.js -->
+        <div class="skill-card">
+          <div class="skill-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(30 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(90 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(150 12 12)"/><circle cx="12" cy="12" r="1"/></svg>
+          </div>
+          <div class="skill-info">
+            <span class="skill-name">React.js</span>
+            <span class="skill-desc">Frontend</span>
+          </div>
+        </div>
+
+        <!-- Node.js -->
+        <div class="skill-card">
+          <div class="skill-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="skill-info">
+            <span class="skill-name">Node.js</span>
+            <span class="skill-desc">Runtime</span>
+          </div>
+        </div>
+
+        <!-- Express -->
+        <div class="skill-card">
+          <div class="skill-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/><path d="m9 16 2 2 4-4"/></svg>
+          </div>
+          <div class="skill-info">
+            <span class="skill-name">Express</span>
+            <span class="skill-desc">Web Framework</span>
+          </div>
+        </div>
+
+        <!-- MongoDB -->
+        <div class="skill-card">
+          <div class="skill-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M12 2c0 0-5 4-5 9.5S9 19 12 22c3-3 5-7 5-10.5S12 2 12 2z"/><path d="M12 2v20"/></svg>
+          </div>
+          <div class="skill-info">
+            <span class="skill-name">MongoDB</span>
+            <span class="skill-desc">NoSQL DB</span>
+          </div>
+        </div>
+
+        <!-- SQL -->
+        <div class="skill-card">
+          <div class="skill-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+          </div>
+          <div class="skill-info">
+            <span class="skill-name">SQL</span>
+            <span class="skill-desc">Relational DB</span>
+          </div>
+        </div>
+
+        <!-- Azure -->
+        <div class="skill-card">
+          <div class="skill-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M2 20h20L12 4z"/><path d="m17 20-5-8-5 8"/></svg>
+          </div>
+          <div class="skill-info">
+            <span class="skill-name">Azure</span>
+            <span class="skill-desc">Cloud Platform</span>
+          </div>
+        </div>
+
+        <!-- Appwrite -->
+        <div class="skill-card">
+          <div class="skill-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="skill-info">
+            <span class="skill-name">Appwrite</span>
+            <span class="skill-desc">BaaS Platform</span>
+          </div>
+        </div>
+
+        <!-- NumPy -->
+        <div class="skill-card">
+          <div class="skill-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <div class="skill-info">
+            <span class="skill-name">NumPy</span>
+            <span class="skill-desc">Scientific Comp</span>
+          </div>
+        </div>
+
+        <!-- Pandas -->
+        <div class="skill-card">
+          <div class="skill-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><rect width="18" height="18" x="3" y="3" rx="2" /><path d="M3 9h18" /><path d="M3 15h18" /><path d="M9 3v18" /><path d="M15 3v18" /></svg>
+          </div>
+          <div class="skill-info">
+            <span class="skill-name">Pandas</span>
+            <span class="skill-desc">Data Analytics</span>
+          </div>
+        </div>
+
+        <!-- Matplotlib -->
+        <div class="skill-card">
+          <div class="skill-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><line x1="18" x2="18" y1="20" y2="4"/><line x1="12" x2="12" y1="20" y2="10"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
+          </div>
+          <div class="skill-info">
+            <span class="skill-name">Matplotlib</span>
+            <span class="skill-desc">Visualization</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1974,6 +2231,7 @@
         <div class="footer-links">
           <a href="#intro">Intro</a>
           <a href="#research">Research</a>
+          <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
         </div>
